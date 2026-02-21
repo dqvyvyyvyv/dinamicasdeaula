@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>+200 Dinâmicas Interativas de Artes | Material Completo para Professores</title>
+    <meta name="description"
+        content="Transforme suas aulas de artes com +200 dinâmicas interativas prontas para usar. Material completo em PDF, acesso digital e bônus exclusivos. Garantia de 7 dias.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;600;700;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-architects {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        :root {
+            --primary-pink: #d946ef;
+            /* fuchsia-500 */
+            --primary-green: #22c55e;
+            /* green-500 */
+        }
+
+        .hover-elevate {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hover-elevate:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .active-elevate-2:active {
+            transform: translateY(-2px);
+        }
+
+        @keyframes accordion-down {
+            from {
+                height: 0;
+            }
+
+            to {
+                height: var(--radix-accordion-content-height);
+            }
+        }
+
+        @keyframes accordion-up {
+            from {
+                height: var(--radix-accordion-content-height);
+            }
+
+            to {
+                height: 0;
+            }
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#9333ea', // purple-600
+                            foreground: '#ffffff',
+                            border: '#e9d5ff', // purple-200
+                            10: 'rgba(147, 51, 234, 0.1)',
+                        },
+                        muted: {
+                            DEFAULT: '#f3f4f6',
+                            foreground: '#6b7280',
+                        },
+                        card: {
+                            DEFAULT: '#ffffff',
+                            foreground: '#000000',
+                            border: '#e5e7eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- UTMify Tracking -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+
+    <!-- UTMify Pixel -->
+    <script>
+        window.pixelId = "6992053466367524e941a292";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+</head>
+
+<body class="bg-white text-black min-h-screen">
+    <div id="app">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden mesh-gradient py-24 md:py-40">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="container relative z-10 mx-auto max-w-6xl px-4 animate-on-scroll">
+                <div class="mb-8 text-center">
+                    <div
+                        class="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-2.5 text-sm font-black uppercase tracking-widest text-white backdrop-blur-md border border-white/20 shadow-2xl pulse-animation">
+                        <i data-lucide="sparkles" class="h-4 w-4 text-warning"></i>
+                        Oferta Exclusiva: <span id="current-date" class="ml-1 text-warning"></span>
+                    </div>
+                </div>
+                <div class="mx-auto max-w-4xl text-center text-white hero-text-shadow">
+                    <h1 class="mb-8 text-5xl font-black md:text-6xl lg:text-7xl tracking-tight leading-tight">
+                        Transforme Aulas em <span
+                            class="bg-gradient-to-r from-pink-500 via-secondary to-yellow-300 bg-clip-text text-transparent drop-shadow-sm">Experiências
+                            Mágicas</span>
+                    </h1>
+                    <div class="mb-12 flex justify-center">
+                        <div class="video-container group"
+                            style="width: 100%; max-width: 380px; position: relative; border-radius: 32px; box-shadow: 0 40px 80px -15px rgba(0,0,0,0.5); background: #000; border: 8px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); overflow: hidden; aspect-ratio: 9/16; transform: perspective(1000px) rotateX(2deg);">
+                            <video id="vsl-video" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"
+                                playsinline>
+                                <source src="vslartes.mp4" type="video/mp4">
+                            </video>
+
+                            <!-- Play Overlay -->
+                            <div id="play-overlay"
+                                class="absolute inset-0 flex flex-col justify-center items-center bg-black/40 cursor-pointer backdrop-blur-[2px] transition-all duration-500 hover:bg-black/20 z-20">
+                                <div
+                                    class="w-24 h-24 bg-white/95 rounded-full flex justify-center items-center mb-6 shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-transform duration-300 group-hover:scale-110">
+                                    <i class="fas fa-play text-primary text-4xl ml-2"></i>
+                                </div>
+                                <p class="text-white font-black uppercase tracking-[0.2em] text-sm drop-shadow-lg">
+                                    Toque para Iniciar</p>
+                            </div>
+
+                            <!-- Pause State Indicator -->
+                            <div id="pause-overlay"
+                                class="absolute inset-0 hidden flex-col justify-center items-center bg-black/50 backdrop-blur-sm pointer-events-none z-20">
+                                <div
+                                    class="w-16 h-16 border-2 border-white/30 rounded-full flex justify-center items-center mb-4">
+                                    <i class="fas fa-play text-white text-xl ml-1"></i>
+                                </div>
+                                <p class="text-white font-bold uppercase tracking-widest text-xs">Clique para Continuar
+                                </p>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="absolute bottom-0 left-0 w-full h-1.5 bg-white/10 z-30">
+                                <div id="video-progress"
+                                    class="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-100 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+                                    style="width: 0%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p
+                        class="mb-10 text-xl text-white md:text-2xl font-semibold max-w-2xl mx-auto leading-relaxed hero-text-shadow">
+                        Desbloqueie a criatividade dos seus alunos com o material mais completo de dinâmicas artísticas
+                        do Brasil.
+                    </p>
+                    <button onclick="document.getElementById('planos').scrollIntoView({behavior: 'smooth'})"
+                        class="inline-flex items-center justify-center gap-4 rounded-2xl h-20 bg-gradient-to-r from-primary to-secondary px-12 text-xl font-black text-white hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(168,85,247,0.5)] border-b-4 border-black/20">
+                        QUERO ACESSO IMEDIATO <i data-lucide="arrow-right" class="h-6 w-6"></i>
+                    </button>
+
+                    <div
+                        class="mt-12 flex items-center justify-center gap-8 text-white/60 text-sm font-bold uppercase tracking-widest">
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="h-4 w-4 text-accent"></i> PDF Pronto</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="h-4 w-4 text-accent"></i> Acesso Vitalício</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle"
+                                class="h-4 w-4 text-accent"></i> 100% Seguro</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstract Shapes for Hero -->
+            <div
+                class="absolute -top-24 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none">
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-24 md:py-32 bg-white relative">
+            <div class="container mx-auto max-w-6xl px-4 animate-on-scroll">
+                <h2
+                    class="mb-16 text-center text-4xl font-black md:text-5xl text-gray-900 tracking-tight leading-tight">
+                    O Que Você <span class="text-primary italic">Vai Receber</span>
+                </h2>
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="file-text" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Material Completo em PDF</h3>
+                        <p class="text-gray-600">+200 dinâmicas de artes organizadas e prontas para usar</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="smartphone" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Acesso Digital Completo</h3>
+                        <p class="text-gray-600">Acesse por celular, tablet ou computador a qualquer hora</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="printer" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Pronto para Imprimir</h3>
+                        <p class="text-gray-600">Material formatado para impressão em qualquer tamanho</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="bg-gray-50/80 py-24 md:py-32 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40">
+            </div>
+            <div class="container mx-auto max-w-6xl px-4 relative z-10 animate-on-scroll">
+                <h2
+                    class="mb-16 text-center text-4xl font-black md:text-5xl text-gray-900 tracking-tight leading-tight">
+                    <span class="text-secondary uppercase text-sm tracking-[0.3em] block mb-4 font-black">Por que
+                        escolher o nosso material?</span>
+                    Benefícios Exclusivos
+                </h2>
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="users" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Para Todas as Idades</h3>
+                        <p class="text-gray-600">Atividades adaptadas desde educação infantil até ensino médio</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="refresh-cw" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Atualizações Mensais</h3>
+                        <p class="text-gray-600">Novas dinâmicas adicionadas todo mês sem custo extra</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center hover-elevate">
+                        <div class="mb-4 flex justify-center">
+                            <div class="rounded-full bg-purple-100 p-4">
+                                <i data-lucide="smile" class="h-8 w-8 text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold">Aprendizado Divertido</h3>
+                        <p class="text-gray-600">Metodologia lúdica que engaja e motiva os alunos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus Section -->
+        <section class="py-24 md:py-32 relative overflow-hidden bg-white">
+            <div class="container mx-auto max-w-6xl px-4 animate-on-scroll">
+                <div class="mb-16 text-center">
+                    <span class="text-primary font-black uppercase tracking-widest text-sm mb-4 block">Oferta por Tempo
+                        Limitado</span>
+                    <h2 class="mb-6 text-4xl font-black md:text-5xl text-gray-900 tracking-tight">Bônus Exclusivos <span
+                            class="text-secondary">— R$97 em Valor</span></h2>
+                    <div
+                        class="inline-block bg-green-100 text-green-700 px-6 py-2 rounded-full font-black text-lg shadow-sm border border-green-200">
+                        HOJE É TUDO GRÁTIS!
+                    </div>
+                </div>
+                <div class="mb-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover-elevate shadow-sm">
+                        <div class="aspect-square overflow-hidden bg-gray-100">
+                            <img src="https://i.imgur.com/ZWz5KvJ.jpeg" alt="50 Técnicas de Pintura e Desenho"
+                                class="h-full w-full object-contain" referrerpolicy="no-referrer">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-2 text-lg font-bold">50 Técnicas de Pintura e Desenho</h3>
+                            <div class="mb-3 flex items-center gap-3">
+                                <span class="text-lg text-gray-400 line-through">R$27</span>
+                                <div
+                                    class="bg-green-500 text-white px-2.5 py-0.5 rounded-md text-xs font-semibold whitespace-nowrap">
+                                    GRÁTIS</div>
+                            </div>
+                            <p class="text-sm text-gray-600">Guia completo com técnicas artísticas para todas as idades
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover-elevate shadow-sm">
+                        <div class="aspect-square overflow-hidden bg-gray-100">
+                            <img src="https://i.imgur.com/5QxiAcy.jpeg" alt="30 Projetos de Arte Prontos"
+                                class="h-full w-full object-contain" referrerpolicy="no-referrer">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-2 text-lg font-bold">30 Projetos de Arte Prontos</h3>
+                            <div class="mb-3 flex items-center gap-3">
+                                <span class="text-lg text-gray-400 line-through">R$37</span>
+                                <div
+                                    class="bg-green-500 text-white px-2.5 py-0.5 rounded-md text-xs font-semibold whitespace-nowrap">
+                                    GRÁTIS</div>
+                            </div>
+                            <p class="text-sm text-gray-600">Projetos criativos completos com passo a passo ilustrado
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover-elevate shadow-sm">
+                        <div class="aspect-square overflow-hidden bg-gray-100">
+                            <img src="https://i.imgur.com/yNufjiL.jpeg" alt="Apostila de Artes Visuais"
+                                class="h-full w-full object-contain" referrerpolicy="no-referrer">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="mb-2 text-lg font-bold">Apostila de Artes Visuais</h3>
+                            <div class="mb-3 flex items-center gap-3">
+                                <span class="text-lg text-gray-400 line-through">R$33</span>
+                                <div
+                                    class="bg-green-500 text-white px-2.5 py-0.5 rounded-md text-xs font-semibold whitespace-nowrap">
+                                    GRÁTIS</div>
+                            </div>
+                            <p class="text-sm text-gray-600">Exercícios práticos de composição, cores e texturas</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="rounded-3xl bg-gradient-to-r from-primary/10 to-secondary/10 p-10 text-center border-2 border-dashed border-primary/30">
+                    <p class="text-2xl font-black text-gray-800">Total em Bônus: <span
+                            class="text-primary underline decoration-secondary decoration-4">R$97 GRÁTIS HOJE!</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Countdown Section -->
+        <section class="bg-gray-50 py-12">
+            <div class="container mx-auto max-w-4xl px-4 text-center">
+                <div class="mb-6 flex items-center justify-center gap-2 text-gray-900">
+                    <i data-lucide="clock" class="h-6 w-6 text-red-500"></i>
+                    <p class="text-xl font-semibold">Oferta especial expira em:</p>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="flex min-w-[100px] items-center justify-center rounded-lg bg-red-500 px-6 py-4">
+                            <div class="text-4xl font-bold text-white transition-all" data-testid="text-hours">01</div>
+                        </div>
+                        <div class="text-sm font-semibold uppercase text-gray-600">Horas</div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="flex min-w-[100px] items-center justify-center rounded-lg bg-red-500 px-6 py-4">
+                            <div class="text-4xl font-bold text-white transition-all" data-testid="text-minutes">34
+                            </div>
+                        </div>
+                        <div class="text-sm font-semibold uppercase text-gray-600">Min</div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="flex min-w-[100px] items-center justify-center rounded-lg bg-red-500 px-6 py-4">
+                            <div class="text-4xl font-bold text-white transition-all" data-testid="text-seconds">16
+                            </div>
+                        </div>
+                        <div class="text-sm font-semibold uppercase text-gray-600">Seg</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="planos" class="py-24 md:py-32 bg-gray-50/50 relative">
+            <div class="container mx-auto max-w-6xl px-4 animate-on-scroll">
+                <h2 class="mb-16 text-center text-4xl font-black md:text-5xl text-gray-900 tracking-tight">Vagas
+                    Limitadas: <span class="text-primary">Escolha Seu Plano</span></h2>
+
+                <div class="grid gap-10 md:grid-cols-2 max-w-5xl mx-auto">
+                    <!-- Basic Plan -->
+                    <div
+                        class="relative bg-white/70 backdrop-blur-md rounded-[2.5rem] border border-gray-200 p-10 flex flex-col items-center hover-elevate shadow-xl">
+                        <h3 class="text-2xl font-black mb-6 text-gray-800">Plano Essencial</h3>
+
+                        <div class="flex flex-col items-center mb-8">
+                            <span class="text-xl text-gray-400 line-through font-bold">R$97</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-black text-gray-800">R$</span>
+                                <span class="text-6xl font-black text-gray-800">10</span>
+                                <span class="text-2xl font-black text-gray-800">,00</span>
+                            </div>
+                            <span class="text-gray-500 text-xs mt-2 font-bold uppercase tracking-widest">pagamento
+                                único</span>
+                            <div
+                                class="mt-4 bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-xs font-black shadow-sm">
+                                ECONOMIZE R$87,00</div>
+                        </div>
+
+                        <ul class="w-full space-y-5 mb-10">
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary/10 p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold">+200 Dinâmicas de Artes PDF</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="rounded-full bg-primary/10 p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold">Acesso digital imediato</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="rounded-full bg-primary/10 p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold">Garantia total de 7 dias</span>
+                            </li>
+                        </ul>
+
+                        <button onclick="openUpsellModal()"
+                            class="w-full h-16 bg-gray-100 text-gray-600 rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-gray-200 transition-all mt-auto border-b-4 border-gray-300">
+                            QUERO O BÁSICO
+                        </button>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div
+                        class="relative bg-white rounded-[2.5rem] border-4 border-primary p-10 flex flex-col items-center hover-elevate shadow-2xl ring-8 ring-primary/5">
+                        <div
+                            class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em] shadow-xl whitespace-nowrap">
+                            OFERTA MAIS ESCOLHIDA
+                        </div>
+
+                        <h3 class="text-2xl font-black mb-6 text-primary">Combo Ultra Premium</h3>
+
+                        <div class="flex flex-col items-center mb-8">
+                            <span class="text-xl text-gray-400 line-through font-bold">R$256</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-black text-primary">R$</span>
+                                <span class="text-7xl font-black text-primary">27</span>
+                                <span class="text-3xl font-black text-primary">,00</span>
+                            </div>
+                            <span class="text-gray-500 text-xs mt-2 font-bold uppercase tracking-widest">pagamento
+                                único</span>
+
+                            <div class="mt-6 space-y-2">
+                                <div
+                                    class="bg-green-500 text-white px-5 py-2 rounded-full text-xs font-black shadow-lg animate-bounce">
+                                    VOCÊ ECONOMIZA R$229,00 + BÔNUS
+                                </div>
+                                <div
+                                    class="flex items-center justify-center gap-2 text-primary font-black text-[10px] uppercase tracking-widest italic">
+                                    <i data-lucide="users" class="h-3 w-3"></i> 1.736+ alunos hoje
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="w-full space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-3 w-3 text-white"></i>
+                                </div>
+                                <span class="text-gray-800 font-black">+200 Dinâmicas de Artes PDF</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-3 w-3 text-white"></i>
+                                </div>
+                                <span class="text-gray-800 font-black">Acesso digital vitalício</span>
+                            </li>
+                            <li class="flex items-start gap-3 p-2 bg-primary/5 rounded-xl border border-primary/10">
+                                <div class="rounded-full bg-secondary p-1 mt-0.5">
+                                    <i data-lucide="star" class="h-3 w-3 text-white fill-current"></i>
+                                </div>
+                                <span class="text-gray-800 font-black text-sm">TODOS OS BÔNUS (VALOR R$97)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-3 w-3 text-white"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold text-sm">Atualizações mensais grátis</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-3 w-3 text-white"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold text-sm">Suporte prioritário VIP</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="rounded-full bg-primary p-1 mt-0.5">
+                                    <i data-lucide="check" class="h-3 w-3 text-white"></i>
+                                </div>
+                                <span class="text-gray-700 font-bold text-sm">Garantia Incondicional</span>
+                            </li>
+                        </ul>
+
+                        <button
+                            onclick="window.location.href='https://www.ggcheckout.com/checkout/v5/QEYr4W2HPXl1PpDSxiqB' + window.location.search"
+                            class="w-full h-20 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl font-black text-lg uppercase tracking-widest hover:scale-[1.03] transition-all mt-auto shadow-[0_15px_30px_-5px_rgba(34,197,94,0.4)] border-b-8 border-green-700 active:border-b-0 active:translate-y-[4px]">
+                            QUERO O COMBO PREMIUM
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 md:py-32 bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
+            <div class="container mx-auto max-w-6xl px-4 text-center relative z-10 animate-on-scroll">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Depoimentos
+                    Reais</span>
+                <h2 class="mb-6 text-4xl font-black md:text-5xl text-gray-900 tracking-tight">O Que Nossos <span
+                        class="italic text-primary">Clientes Dizem</span></h2>
+                <div class="mb-16 flex flex-col items-center justify-center gap-3">
+                    <div class="flex text-warning">
+                        <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                        <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                        <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                        <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                        <i data-lucide="star" class="h-6 w-6 fill-current"></i>
+                    </div>
+                    <p class="text-sm font-black text-gray-500 uppercase tracking-widest">Média de 4.9/5 estrelas
+                        baseada em 347+ avaliações</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white rounded-xl border border-gray-100 p-8 shadow-sm text-left">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">"As dinâmicas transformaram minhas aulas! Meus alunos nunca
+                            estiveram tão engajados com artes. Material excepcional!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
+                                <img src="https://i.imgur.com/sJPZHiQ.png" alt="Prof. Ana Silva"
+                                    class="h-full w-full object-cover" referrerpolicy="no-referrer">
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">Prof. Ana Silva</p>
+                                <p class="text-xs text-gray-500 italic">Professora de Educação Artística - SP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white rounded-xl border border-gray-100 p-8 shadow-sm text-left">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">"Meu filho sempre teve dificuldades em se expressar. Com
+                            essas atividades, ele começou a gostar de artes. Recomendo!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
+                                <img src="https://i.imgur.com/QlfNLYM.png" alt="Carla Santos"
+                                    class="h-full w-full object-cover" referrerpolicy="no-referrer">
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">Carla Santos</p>
+                                <p class="text-xs text-gray-500 italic">Mãe de Aluno - RJ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white rounded-xl border border-gray-100 p-8 shadow-sm text-left">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">"Implementamos na nossa escola e os resultados foram
+                            incríveis. Os professores adoraram e os alunos melhoraram muito!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
+                                <img src="https://i.imgur.com/CLvtEdw.png" alt="Marisa Oliveira"
+                                    class="h-full w-full object-cover" referrerpolicy="no-referrer">
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-900">Marisa Oliveira</p>
+                                <p class="text-xs text-gray-500 italic">Coordenadora Escolar - MG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Author Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto max-w-5xl px-4">
+                <h2 class="mb-12 text-center text-3xl font-bold md:text-4xl text-gray-900">Sobre a Autora</h2>
+
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/3">
+                        <div
+                            class="aspect-square relative rounded-2xl overflow-hidden shadow-xl border-4 border-white ring-1 ring-gray-100">
+                            <img src="https://i.imgur.com/36AxMwA.png" alt="Juliana Gomes"
+                                class="h-full w-full object-cover" referrerpolicy="no-referrer">
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Juliana Gomes</h3>
+                        <p class="text-purple-600 font-semibold mb-6">Educadora de Artes Especialista</p>
+
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+                                <i data-lucide="award" class="h-6 w-6 text-purple-600 mx-auto mb-2"></i>
+                                <p class="text-xl font-bold text-gray-900">15+</p>
+                                <p class="text-[10px] text-gray-500 uppercase font-black tracking-wider">Anos de
+                                    experiência</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+                                <i data-lucide="users" class="h-6 w-6 text-purple-600 mx-auto mb-2"></i>
+                                <p class="text-xl font-bold text-gray-900">3.500+</p>
+                                <p class="text-[10px] text-gray-500 uppercase font-black tracking-wider">Professores
+                                    Formados</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+                                <i data-lucide="book-open" class="h-6 w-6 text-purple-600 mx-auto mb-2"></i>
+                                <p class="text-xl font-bold text-gray-900">200+</p>
+                                <p class="text-[10px] text-gray-500 uppercase font-black tracking-wider">Workshops
+                                    Realizados</p>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 pl-6 py-2 italic text-gray-600 text-sm">
+                            "Dediquei minha carreira a tornar as artes mais acessíveis e divertidas. Essas dinâmicas são
+                            o resultado de anos de pesquisa e prática em sala de aula."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] opacity-30">
+            </div>
+            <div class="container mx-auto max-w-4xl px-4 relative z-10 animate-on-scroll">
+                <h2 class="mb-16 text-center text-4xl font-black md:text-5xl text-gray-900 tracking-tight">Dúvidas <span
+                        class="text-primary italic">Frequentes</span></h2>
+
+                <div class="space-y-4">
+                    <details class="group bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <span class="font-bold text-gray-800">Como acessar o material?</span>
+                            <i data-lucide="chevron-down"
+                                class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                            O acesso é enviado imediatamente para o seu e-mail após a confirmação do pagamento. Você
+                            receberá um link para baixar todo o material em PDF e acessar a plataforma digital.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <span class="font-bold text-gray-800">Posso usar em escola/curso?</span>
+                            <i data-lucide="chevron-down"
+                                class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                            Sim! O material foi desenvolvido especificamente para ser utilizado em ambiente escolar,
+                            projetos sociais, cursos de artes e até mesmo para aulas particulares.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <span class="font-bold text-gray-800">Serve para qual idade?</span>
+                            <i data-lucide="chevron-down"
+                                class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                            As dinâmicas são adaptáveis para crianças desde a educação infantil até adolescentes no
+                            ensino médio, com diferentes níveis de complexidade.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <span class="font-bold text-gray-800">Preciso ter experiência prévia com artes?</span>
+                            <i data-lucide="chevron-down"
+                                class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                            Não é necessário. O material é extremamente didático e explicativo, guiando o professor ou
+                            facilitador em cada passo das atividades.
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <span class="font-bold text-gray-800">Como funciona a garantia?</span>
+                            <i data-lucide="chevron-down"
+                                class="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">
+                            Oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não gostar do
+                            material, basta nos enviar um e-mail e devolveremos 100% do seu investimento.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee Section -->
+        <section class="py-16 md:py-24 bg-white border-t border-gray-100 text-outfit">
+            <div class="container mx-auto max-w-4xl px-4 text-center">
+                <div class="mb-8 flex justify-center">
+                    <div class="w-48 h-48 relative">
+                        <img src="https://i.imgur.com/leJ5HVi.png" alt="Selo de Garantia 7 Dias"
+                            class="w-full h-full object-contain" referrerpolicy="no-referrer">
+                    </div>
+                </div>
+
+                <h2
+                    class="mb-4 flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold text-gray-900 border-none">
+                    <i data-lucide="shield-check" class="h-8 w-8 text-purple-600"></i>
+                    Garantia de 7 Dias
+                </h2>
+
+                <p class="mb-10 text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+                    Teste o material por 7 dias. Se não ficar satisfeito, devolvemos seu dinheiro sem complicação.
+                </p>
+
+                <button onclick="document.getElementById('planos').scrollIntoView({behavior: 'smooth'})"
+                    class="inline-flex items-center justify-center gap-2 rounded-md h-16 bg-purple-600 px-10 text-lg font-bold text-white hover:bg-purple-700 hover-elevate active-elevate-2 shadow-lg transition-all uppercase tracking-wide">
+                    COMPRAR COM SEGURANÇA
+                </button>
+            </div>
+        </section>
+
+        <!-- Upsell Popup -->
+        <div id="upsell-modal"
+            class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+            <div
+                class="relative w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-2xl animate-in fade-in zoom-in duration-300">
+                <button onclick="closeUpsellModal()" class="absolute right-4 top-4 text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+
+                <div class="bg-purple-600 px-6 py-8 text-center text-white">
+                    <div
+                        class="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                        Oferta Exclusiva</div>
+                    <h2 class="text-3xl font-black italic tracking-tight">ESPERA! NÃO VÁ AINDA...</h2>
+                </div>
+
+                <div class="p-8 text-center text-outfit">
+                    <p class="mb-6 text-lg font-bold text-gray-800 leading-tight">
+                        Por que levar apenas as dinâmicas se você pode garantir o <span class="text-purple-600">COMBO
+                            COMPLETO</span> com todos os bônus?
+                    </p>
+
+                    <div class="mb-8 space-y-3 text-left">
+                        <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-green-500"></i>
+                            +200 Dinâmicas de Artes
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-green-500"></i>
+                            BÔNUS: 50 Técnicas de Pintura
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-green-500"></i>
+                            BÔNUS: 30 Projetos Prontos
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                            <i data-lucide="check-circle-2" class="h-5 w-5 text-green-500"></i>
+                            BÔNUS: Apostila de Artes Visuais
+                        </div>
+                    </div>
+
+                    <div class="mb-8 rounded-2xl bg-gray-50 p-6 border-2 border-dashed border-purple-200">
+                        <p class="text-sm font-bold text-gray-500 line-through">De R$ 256,00</p>
+                        <div class="flex items-center justify-center gap-1 leading-none">
+                            <span class="text-xl font-bold text-purple-600">R$</span>
+                            <span class="text-5xl font-black text-purple-600">17,00</span>
+                        </div>
+                        <p class="mt-2 text-xs font-black uppercase text-green-600">Apenas R$ 7,00 a mais!</p>
+                    </div>
+
+                    <button
+                        onclick="window.location.href='https://www.ggcheckout.com/checkout/v5/a3pT1JAjttozVhWtSZjV' + window.location.search"
+                        class="mb-4 w-full rounded-xl bg-green-500 py-5 text-xl font-black text-white shadow-lg hover:bg-green-600 hover-elevate active-elevate-2 transition-all border-b-4 border-green-700">
+                        SIM! QUERO O COMBO COMPLETO
+                    </button>
+
+                    <button
+                        onclick="window.location.href='https://www.ggcheckout.com/checkout/v5/FHka5Jl3Fbik36moGpoo' + window.location.search"
+                        class="text-sm font-bold text-gray-400 hover:text-gray-600 underline text-center w-full">
+                        Não, prefiro levar apenas o básico por R$ 10
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // We don't want to un-observe if we want it to re-animate, 
+                    // but for performance "once" is better.
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Update date
+        const dateElement = document.getElementById('current-date');
+        const now = new Date();
+        dateElement.textContent = now.toLocaleDateString('pt-BR');
+
+        // Video Player Logic
+        const vslVideo = document.getElementById('vsl-video');
+        const playOverlay = document.getElementById('play-overlay');
+        const pauseOverlay = document.getElementById('pause-overlay');
+        const videoProgress = document.getElementById('video-progress');
+
+        const togglePlay = () => {
+            if (vslVideo.paused) {
+                vslVideo.play();
+                playOverlay.style.display = 'none';
+                pauseOverlay.style.display = 'none';
+            } else {
+                vslVideo.pause();
+                pauseOverlay.style.display = 'flex';
+            }
+        };
+
+        playOverlay.addEventListener('click', togglePlay);
+        vslVideo.addEventListener('click', togglePlay);
+
+        vslVideo.addEventListener('timeupdate', () => {
+            const progress = (vslVideo.currentTime / vslVideo.duration) * 100;
+            videoProgress.style.width = `${progress}%`;
+        });
+
+        vslVideo.addEventListener('ended', () => {
+            playOverlay.style.display = 'flex';
+            videoProgress.style.width = '0%';
+        });
+
+        // Upsell Modal Logic
+        const upsellModal = document.getElementById('upsell-modal');
+
+        function openUpsellModal() {
+            upsellModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Re-initialize icons for the modal
+            lucide.createIcons();
+        }
+
+        function closeUpsellModal() {
+            upsellModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === upsellModal) {
+                closeUpsellModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
